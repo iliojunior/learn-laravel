@@ -1,9 +1,11 @@
 # Hello-Laravel
 
+> Project for learning Laravel Framework v5.5 using TDD
+
 ## Requirements
 
-- Docker
-- Docker Compose
+- [Docker](https://www.docker.com/)
+- [Docker Compose](https://docs.docker.com/compose/)
 
 ## Build
 
