@@ -1,0 +1,33 @@
+# v2 syntax
+version: '2'
+
+volumes:
+  # MySQL Data
+  ilio-mysql-data:
+    driver: local
+
+services:
+  # MySQL (5.7)
+  mysql:
+    image: ambientum/mysql:5.7
+    container_name: ilio-mysql
+    volumes:
+      - ilio-mysql-data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=ilio
+      - MYSQL_DATABASE=ilioSchema
+      - MYSQL_USER=ilio
+      - MYSQL_PASSWORD=ilio
+
+  # PHP (with Apache)
+  app:
+    image: ambientum/php:7.0-apache
+    container_name: ilio-app
+    volumes:
+      - .:/var/www/app
+    ports:
+      - "8081:8080"
+    links:
+      - mysql
