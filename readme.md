@@ -1,4 +1,4 @@
-# Hello-Laravel
+# Learn Laravel
 
 > Project for learning Laravel Framework v5.5 using TDD
 
