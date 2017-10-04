@@ -42,6 +42,26 @@ class TodoTest extends TestCase
             ->assertJsonFragment($newTodo->toArray());
     }
 
+    public function testRecuperarUmTodoPorId()
+    {
+        $newTodo = factory(Todo::class)->create();
+
+        $response = $this->json('GET', '/api/todos/' . $newTodo->id);
+
+        $response
+            ->assertStatus(200)
+            ->assertJsonFragment($newTodo->toArray());
+    }
+
+    public function testRecuperarUmTodoPorIdInexistente()
+    {
+        $response = $this->json('GET', '/api/todos/999');
+
+        //404 -> Not found
+        $response
+            ->assertStatus(404);
+    }
+
     public function testGravandoUmNovoTodo()
     {
         //Criando o TODO
@@ -59,6 +79,17 @@ class TodoTest extends TestCase
         $response
             ->assertStatus(201)
             ->assertJsonFragment($newTodo->toArray());
+    }
+
+    public function testGravandoUmTodoVazio()
+    {
+        $newTodo = new Todo();
+
+        $response = $this->json('POST', '/api/todos', $newTodo->toArray());
+
+        //Asserta 422 -> Entidade não pode ser convertida
+        $response
+            ->assertStatus(422);
     }
 
     public function testGravarUmTodoERecuperarOTodoCriado()

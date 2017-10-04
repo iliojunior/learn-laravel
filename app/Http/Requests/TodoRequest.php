@@ -28,4 +28,16 @@ class TodoRequest extends FormRequest
             'description' => 'required'
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'name.required' => 'O campo nome é obrigatório',
+            'name.max' => 'Tamanho máximo do campo nome é 255',
+            'name.unique' => 'Este nome já está cadastrado, informe outro',
+            'description.required' => 'O campo descrição é obrigatório'
+        ];
+    }
+
+
 }
