@@ -62,6 +62,32 @@ class TodoTest extends TestCase
             ->assertStatus(404);
     }
 
+    public function testRecuperarComOrdenacaoAscPorName()
+    {
+        $todo1 = new  Todo();
+        $todo1->name = "zzz";
+        $todo1->description = "batata";
+        $todo1->save();
+
+        $todo2 = new  Todo();
+        $todo2->name = "aaa";
+        $todo2->description = "batata";
+        $todo2->save();
+
+        $response = $this->json('GET', '/api/todos?sortBy=name&descending=false');
+
+        $response
+            ->assertSuccessful()
+            ->assertJson([
+                'data' => [
+                    '0' => [
+                        'name' => 'aaa',
+                        'description' => 'batata'
+                    ]
+                ]
+            ]);
+    }
+
     public function testGravandoUmNovoTodo()
     {
         //Criando o TODO
