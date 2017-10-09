@@ -16,8 +16,14 @@ class TodoController extends Controller
         //Limite de item por pagina no field 'limit'
         $limit = $request->get('limit');
 
+        $sortBy = $request->get("sortBy");
+        $descending = $request->get("descending");
+
         //Faz o get de todos os TODOS de acordo com a busca
         $listData = Todo::search($searchTerm);
+
+        if ($sortBy)
+            $listData = $listData->orderBy($sortBy, $descending == "true" ? 'desc' : 'asc');
 
         //Faz a paginação dos TODOS
         $listData = $listData->paginate($limit ?: 15);

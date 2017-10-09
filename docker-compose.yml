@@ -27,6 +27,7 @@ services:
     container_name: ilio-app
     volumes:
       - .:/var/www/app
+      - ./config/docker/xdebug.ini:/etc/php/7.0/cli/conf.d/20-xdebug.ini
     ports:
       - "8081:8080"
     links:
