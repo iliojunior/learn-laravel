@@ -13,6 +13,7 @@ class Todo extends Model
                 ->where('name', 'like', "%$term%")
                 ->orWhere('description', 'like', "%$term%");
         }
+        
         return $query;
     }
 }

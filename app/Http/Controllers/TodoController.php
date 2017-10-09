@@ -11,10 +11,10 @@ class TodoController extends Controller
     public function index(Request $request)
     {
         //Termo da pesquisa passado no field 'search'
-        $searchTerm = $request->get("search");
+        $searchTerm = $request->get('search');
 
         //Limite de item por pagina no field 'limit'
-        $limit = $request->get("limit");
+        $limit = $request->get('limit');
 
         //Faz o get de todos os TODOS de acordo com a busca
         $listData = Todo::search($searchTerm);
@@ -35,8 +35,8 @@ class TodoController extends Controller
     private function save(Todo $todo, TodoRequest $request)
     {
         //Atribui os valores para $todo
-        $todo->name = $request->json("name");
-        $todo->description = $request->json("description");
+        $todo->name = $request->json('name');
+        $todo->description = $request->json('description');
 
         //Salva o modelo
         $todo->save();

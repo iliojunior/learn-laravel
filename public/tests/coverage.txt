@@ -1,0 +1,30 @@
+
+
+Code Coverage Report:     
+  2017-10-04 18:38:41     
+                          
+ Summary:                 
+  Classes: 100.00% (10/10)
+  Methods: 100.00% (22/22)
+  Lines:   100.00% (55/55)
+
+\App::Todo
+  Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  4/  4)
+\App\Console::Kernel
+  Methods: 100.00% ( 2/ 2)   Lines: 100.00% (  4/  4)
+\App\Exceptions::Handler
+  Methods: 100.00% ( 2/ 2)   Lines: 100.00% (  3/  3)
+\App\Http\Controllers::TodoController
+  Methods: 100.00% ( 5/ 5)   Lines: 100.00% ( 17/ 17)
+\App\Http\Middleware::Cors
+  Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  4/  4)
+\App\Http\Requests::TodoRequest
+  Methods: 100.00% ( 3/ 3)   Lines: 100.00% (  3/  3)
+\App\Providers::AppServiceProvider
+  Methods: 100.00% ( 2/ 2)   Lines: 100.00% (  2/  2)
+\App\Providers::AuthServiceProvider
+  Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  2/  2)
+\App\Providers::EventServiceProvider
+  Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  2/  2)
+\App\Providers::RouteServiceProvider
+  Methods: 100.00% ( 4/ 4)   Lines: 100.00% ( 14/ 14)

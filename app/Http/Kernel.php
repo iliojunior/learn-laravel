@@ -17,7 +17,7 @@ class Kernel extends HttpKernel
         \Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode::class,
         \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
-        \App\Http\Middleware\Cors::class
+        \App\Http\Middleware\Cors::class,
     ];
 
     /**
@@ -49,15 +49,15 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
-        'auth' => \Illuminate\Auth\Middleware\Authenticate::class,
-        'cors' => \App\Http\Middleware\Cors::class,
-        'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
-        'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class,
-        'can' => \Illuminate\Auth\Middleware\Authorize::class,
-        'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
-        'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
+        'auth'         => \Illuminate\Auth\Middleware\Authenticate::class,
+        'cors'         => \App\Http\Middleware\Cors::class,
+        'auth.basic'   => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
+        'bindings'     => \Illuminate\Routing\Middleware\SubstituteBindings::class,
+        'can'          => \Illuminate\Auth\Middleware\Authorize::class,
+        'guest'        => \App\Http\Middleware\RedirectIfAuthenticated::class,
+        'throttle'     => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'transactions' => \Modules\ModuleControl\Http\Middleware\DatabaseTransaction::class,
-        'jwt.auth' => \Tymon\JWTAuth\Middleware\GetUserFromToken::class,
-        'jwt.refresh' => \Tymon\JWTAuth\Middleware\RefreshToken::class,
+        'jwt.auth'     => \Tymon\JWTAuth\Middleware\GetUserFromToken::class,
+        'jwt.refresh'  => \Tymon\JWTAuth\Middleware\RefreshToken::class,
     ];
 }
