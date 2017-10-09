@@ -38,6 +38,4 @@ class TodoRequest extends FormRequest
             'description.required' => 'O campo descrição é obrigatório',
         ];
     }
-
-
 }
